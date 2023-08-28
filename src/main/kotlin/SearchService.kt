@@ -17,7 +17,7 @@ class SearchService(private val db: MongoDatabase) {
 
     fun getListingByCountry(countryCode: String): Flow<ListingResponseModel> {
 
-        val fieldSet = Projections.computed("countryName", "\$address.country")
+        val fieldSet = Projections.computed("address", "\$address.street")
 
         val projection = Projections
             .include(
