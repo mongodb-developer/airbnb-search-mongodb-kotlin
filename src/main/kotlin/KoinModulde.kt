@@ -11,9 +11,7 @@ val appModule = module {
     }
 
     single {
-        ignite().run {
-            port(1234)
-        }
+        ignite()
     }
 
     singleOf(::ApiRoutes)
